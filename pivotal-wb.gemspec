@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'pivotal/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "pivotal"
+  spec.name          = "pivotal-wb"
   spec.version       = Pivotal::VERSION
   spec.authors       = ["Chris Ledet"]
   spec.email         = ["chris.ledet@wildbit.com"]
