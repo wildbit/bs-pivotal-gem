@@ -120,6 +120,15 @@ module Pivotal
       Pivotal::Label.new(raw_label['id'], raw_label['name'])
     end
 
+    def change_story_state(project_id, story_id, state)
+      if Pivotal::Story::STATES.include?(state)
+        raw_story = put_response(project_story_path(project_id, story_id), current_state: state.to_s.downcase)
+        Pivotal::Story.new(raw_story['id'], raw_story['name'])
+      else
+        raise Pivotal::UnknownStateError.new("#{state} is not a valid story state")
+      end
+    end
+
     private
 
     def get_response(path)
@@ -130,6 +139,12 @@ module Pivotal
     def post_response(path, post_body)
       json_body = JSON(post_body)
       raw_response = self.class.post(path, http_options.merge(body: json_body))
+      JSON.parse(raw_response.body)
+    end
+
+    def put_response(path, put_body)
+      json_body = JSON(put_body)
+      raw_response = self.class.put(path, http_options.merge(body: json_body))
       JSON.parse(raw_response.body)
     end
 

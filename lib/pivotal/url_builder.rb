@@ -28,6 +28,10 @@ module Pivotal
       BASE_URL % "stories/#{id}"
     end
 
+    def project_story_path(project_id, id)
+      "%s/#{id}" % stories_path(project_id)
+    end
+
     def epics_path(project_id)
       "#{project_path(project_id)}/epics"
     end
