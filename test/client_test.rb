@@ -6,6 +6,23 @@ class ClientTest < Test::Unit::TestCase
     @client = Pivotal::Client.new(token)
   end
 
+  def test_accounts
+    VCR.use_cassette('accounts') do
+      @client.accounts.each do |account|
+        assert_not_nil account.id
+        assert_not_nil account.name
+      end
+    end
+  end
+
+  def test_single_account
+    VCR.use_cassette('account') do
+      account = @client.account(535789)
+      assert_not_nil account.id
+      assert_not_nil account.name
+    end
+  end
+
   def test_projects
     VCR.use_cassette('projects') do
       @client.projects.each do |project|
@@ -36,23 +53,6 @@ class ClientTest < Test::Unit::TestCase
       story = @client.story(63414462)
       assert_not_nil story.id
       assert_not_nil story.name
-    end
-  end
-
-  def test_accounts
-    VCR.use_cassette('accounts') do
-      @client.accounts.each do |account|
-        assert_not_nil account.id
-        assert_not_nil account.name
-      end
-    end
-  end
-
-  def test_single_account
-    VCR.use_cassette('account') do
-      account = @client.account(535789)
-      assert_not_nil account.id
-      assert_not_nil account.name
     end
   end
 end
