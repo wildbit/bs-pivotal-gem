@@ -18,7 +18,8 @@ class PivotalTestCase < Test::Unit::TestCase
     @account_id = 535789
     @project_id = 987666
     @story_id = 63414462
-    @comment_id = 59955332
+    @story_comment_id = 59955332
+    @epic_comment_id = 59968756
     @epic_id = 1017976
   end
 end
