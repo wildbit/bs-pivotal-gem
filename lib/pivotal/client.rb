@@ -116,7 +116,7 @@ module Pivotal
     end
 
     def assign_label_to_story(project_id, story_id, name)
-      raw_label = post_response(project_story_labels(project_id, story_id), name: name.to_s.downcase)
+      raw_label = post_response(project_story_labels_path(project_id, story_id), name: name.to_s.downcase)
       Pivotal::Label.new(raw_label['id'], raw_label['name'])
     end
 

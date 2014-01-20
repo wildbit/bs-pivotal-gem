@@ -56,7 +56,7 @@ module Pivotal
       "%s/labels" % project_path(project_id)
     end
 
-    def project_story_labels(project_id, story_id)
+    def project_story_labels_path(project_id, story_id)
       "%s/#{story_id}/labels" % stories_path(project_id)
     end
   end
