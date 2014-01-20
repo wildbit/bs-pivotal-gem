@@ -7,28 +7,52 @@ class ClientTest < Test::Unit::TestCase
   end
 
   def test_projects
-    @client.projects.each do |project|
+    VCR.use_cassette('projects') do
+      @client.projects.each do |project|
+        assert_not_nil project.id
+        assert_not_nil project.name
+      end
+    end
+  end
+
+  def test_single_project
+    VCR.use_cassette('project') do
+      project = @client.project(987666)
       assert_not_nil project.id
       assert_not_nil project.name
     end
   end
 
-  def test_single_project
-    project = @client.project(987666)
-    assert_not_nil project.id
-    assert_not_nil project.name
+  def test_project_stories
+    VCR.use_cassette('stories') do
+      @client.stories(987666).each do |story|
+        assert_not_nil story.id
+      end
+    end
+  end
+
+  def test_single_story
+    VCR.use_cassette('story') do
+      story = @client.story(63414462)
+      assert_not_nil story.id
+      assert_not_nil story.name
+    end
   end
 
   def test_accounts
-    @client.accounts.each do |account|
-      assert_not_nil account.id
-      assert_not_nil account.name
+    VCR.use_cassette('accounts') do
+      @client.accounts.each do |account|
+        assert_not_nil account.id
+        assert_not_nil account.name
+      end
     end
   end
 
   def test_single_account
-    account = @client.account(535789)
-    assert_not_nil account.id
-    assert_not_nil account.name
+    VCR.use_cassette('account') do
+      account = @client.account(535789)
+      assert_not_nil account.id
+      assert_not_nil account.name
+    end
   end
 end

@@ -28,6 +28,16 @@ module Pivotal
     end
 
     def stories(project_id)
+      raw_stories = get_response(stories_path(project_id))
+
+      raw_stories.map do |raw_story|
+        Pivotal::Models::Story.new(raw_story['id'], raw_story['name'])
+      end
+    end
+
+    def story(id)
+      raw_story = get_response(story_path(id))
+      Pivotal::Models::Project.new(raw_story['id'], raw_story['name'])
     end
 
     def accounts

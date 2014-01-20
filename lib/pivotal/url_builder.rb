@@ -19,5 +19,13 @@ module Pivotal
     def account_path(id)
       BASE_URL % "accounts/#{id}"
     end
+
+    def stories_path(project_id)
+      BASE_URL % "projects/#{project_id}/stories"
+    end
+
+    def story_path(id)
+      BASE_URL % "stories/#{id}"
+    end
   end
 end
