@@ -3,6 +3,7 @@ require 'pivotal/account'
 require 'pivotal/project'
 require 'pivotal/story'
 require 'pivotal/comment'
+require 'pivotal/epic'
 require 'httparty'
 require 'json'
 
@@ -41,6 +42,19 @@ module Pivotal
     def story(id)
       raw_story = get_response(story_path(id))
       Pivotal::Project.new(raw_story['id'], raw_story['name'])
+    end
+
+    def epics(project_id)
+      raw_epics = get_response(epics_path(project_id))
+
+      raw_epics.map do |raw_epic|
+        Pivotal::Epic.new(raw_epic['id'], raw_epic['name'])
+      end
+    end
+
+    def epic(project_id, id)
+      raw_epic = get_response(epic_path(project_id, id))
+      Pivotal::Epic.new(raw_epic['id'], raw_epic['name'])
     end
 
     def accounts

@@ -9,6 +9,7 @@ class ClientTest < Test::Unit::TestCase
     @project_id = 987666
     @story_id = 63414462
     @comment_id = 59955332
+    @epic_id = 1017976
   end
 
   def test_accounts
@@ -58,6 +59,21 @@ class ClientTest < Test::Unit::TestCase
       story = @client.story(@story_id)
       assert_not_nil story.id
       assert_not_nil story.name
+    end
+  end
+
+  def test_epics
+    VCR.use_cassette('epics') do
+      @client.epics(@project_id).each do |epic|
+        assert_not_nil epic.id, "Epic ID was nil"
+      end
+    end
+  end
+
+  def test_single_epic
+    VCR.use_cassette('epic') do
+      epic = @client.epic(@project_id, @epic_id)
+      assert_not_nil epic.id, "Epic ID was nil"
     end
   end
 
