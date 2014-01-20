@@ -1,6 +1,6 @@
 # Pivotal
 
-Yet another lightweight Pivotal Tracker API client for Ruby
+Yet another lightweight Pivotal Tracker API v5 client for Ruby
 
 ## Installation
 
