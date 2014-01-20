@@ -51,5 +51,13 @@ module Pivotal
     def epic_comment_path(project_id, epic_id, comment_id)
       "%s/#{comment_id}" % epic_comments_path(project_id, epic_id)
     end
+
+    def project_labels_path(project_id)
+      "%s/labels" % project_path(project_id)
+    end
+
+    def project_story_labels(project_id, story_id)
+      "%s/#{story_id}/labels" % stories_path(project_id)
+    end
   end
 end

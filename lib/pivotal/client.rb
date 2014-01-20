@@ -4,6 +4,7 @@ require 'pivotal/project'
 require 'pivotal/story'
 require 'pivotal/comment'
 require 'pivotal/epic'
+require 'pivotal/label'
 require 'httparty'
 require 'json'
 
@@ -73,7 +74,7 @@ module Pivotal
     def story_comments(project_id, story_id)
       raw_comments = get_response(story_comments_path(project_id, story_id))
 
-      comments = raw_comments.map do |raw_comment|
+      raw_comments.map do |raw_comment|
         Pivotal::Comment.new(raw_comment['id'], raw_comment['text'])
       end
     end
@@ -104,6 +105,19 @@ module Pivotal
     def new_epic_comment(project_id, epic_id, text)
       raw_comment = post_response(epic_comments_path(project_id, epic_id), text: text)
       Pivotal::Comment.new(raw_comment['id'], raw_comment['text'])
+    end
+
+    def project_labels(project_id)
+      raw_labels = get_response(project_labels_path(project_id))
+
+      raw_labels.map do |raw_label|
+        Pivotal::Label.new(raw_label['id'], raw_label['name'])
+      end
+    end
+
+    def assign_label_to_story(project_id, story_id, name)
+      raw_label = post_response(project_story_labels(project_id, story_id), name: name.to_s.downcase)
+      Pivotal::Label.new(raw_label['id'], raw_label['name'])
     end
 
     private
