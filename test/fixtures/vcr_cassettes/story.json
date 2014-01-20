@@ -1,1 +1,73 @@
-{"http_interactions":[{"request":{"method":"get","uri":"https://www.pivotaltracker.com/services/v5/stories/63414462","body":{"encoding":"US-ASCII","string":""},"headers":{"X-Trackertoken":["7d2d06f6381f9be18833d44c9361828c"]}},"response":{"status":{"code":200,"message":"OK"},"headers":{"Content-Type":["application/json; charset=utf-8"],"Content-Length":["667"],"Status":["200"],"X-Powered-By":["Phusion Passenger (mod_rails/mod_rack) 3.0.14"],"X-Tracker-Project-Version":["3"],"Cache-Control":["private, max-age=0, must-revalidate"],"X-Runtime":["51"],"Etag":["\"e848fb39edcbc8b4528bf5d22d67ffb9\""],"Server":["nginx/1.2.2 + Phusion Passenger 3.0.14 (mod_rails/mod_rack)"],"Access-Control-Allow-Origin":["*"],"Access-Control-Allow-Credentials":["false"],"Access-Control-Allow-Methods":["GET, POST, PUT, DELETE, OPTIONS"],"Access-Control-Allow-Headers":["X-TrackerToken,DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,X-Tracker-Warn-Unless-Project-Version-Is"]},"body":{"encoding":"UTF-8","string":"{\n  \"current_state\": \"unscheduled\",\n  \"owner_ids\": [\n\n  ],\n  \"description\": \"I would love to see my commits associated with my user stories\",\n  \"updated_at\": \"2014-01-07T21:30:13Z\",\n  \"project_id\": 987666,\n  \"id\": 63414462,\n  \"kind\": \"story\",\n  \"requested_by_id\": 1033785,\n  \"created_at\": \"2014-01-07T21:30:13Z\",\n  \"url\": \"http://www.pivotaltracker.com/story/show/63414462\",\n  \"name\": \"Integration with Pivotal Tracker\",\n  \"labels\": [\n    {\n      \"updated_at\": \"2014-01-07T21:30:13Z\",\n      \"project_id\": 987666,\n      \"id\": 7415284,\n      \"kind\": \"label\",\n      \"created_at\": \"2014-01-07T21:30:13Z\",\n      \"name\": \"integration\"\n    }\n  ],\n  \"story_type\": \"feature\"\n}"},"http_version":null},"recorded_at":"Mon, 20 Jan 2014 15:44:01 GMT"}],"recorded_with":"VCR 2.8.0"}
+{
+    "http_interactions":[
+        {
+            "request":{
+                "method":"get",
+                "uri":"https://www.pivotaltracker.com/services/v5/stories/63414462",
+                "body":{
+                    "encoding":"US-ASCII",
+                    "string":""
+                },
+                "headers":{
+                    "X-Trackertoken":[
+                        "7d2d06f6381f9be18833d44c9361828c"
+                    ]
+                }
+            },
+            "response":{
+                "status":{
+                    "code":200,
+                    "message":"OK"
+                },
+                "headers":{
+                    "Content-Type":[
+                        "application/json; charset=utf-8"
+                    ],
+                    "Content-Length":[
+                        "667"
+                    ],
+                    "Status":[
+                        "200"
+                    ],
+                    "X-Powered-By":[
+                        "Phusion Passenger (mod_rails/mod_rack) 3.0.14"
+                    ],
+                    "X-Tracker-Project-Version":[
+                        "3"
+                    ],
+                    "Cache-Control":[
+                        "private, max-age=0, must-revalidate"
+                    ],
+                    "X-Runtime":[
+                        "51"
+                    ],
+                    "Etag":[
+                        "\"e848fb39edcbc8b4528bf5d22d67ffb9\""
+                    ],
+                    "Server":[
+                        "nginx/1.2.2 + Phusion Passenger 3.0.14 (mod_rails/mod_rack)"
+                    ],
+                    "Access-Control-Allow-Origin":[
+                        "*"
+                    ],
+                    "Access-Control-Allow-Credentials":[
+                        "false"
+                    ],
+                    "Access-Control-Allow-Methods":[
+                        "GET, POST, PUT, DELETE, OPTIONS"
+                    ],
+                    "Access-Control-Allow-Headers":[
+                        "X-TrackerToken,DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,X-Tracker-Warn-Unless-Project-Version-Is"
+                    ]
+                },
+                "body":{
+                    "encoding":"UTF-8",
+                    "string":"{\n  \"current_state\": \"unscheduled\",\n  \"owner_ids\": [\n\n  ],\n  \"description\": \"I would love to see my commits associated with my user stories\",\n  \"updated_at\": \"2014-01-07T21:30:13Z\",\n  \"project_id\": 987666,\n  \"id\": 63414462,\n  \"kind\": \"story\",\n  \"requested_by_id\": 1033785,\n  \"created_at\": \"2014-01-07T21:30:13Z\",\n  \"url\": \"http://www.pivotaltracker.com/story/show/63414462\",\n  \"name\": \"Integration with Pivotal Tracker\",\n  \"labels\": [\n    {\n      \"updated_at\": \"2014-01-07T21:30:13Z\",\n      \"project_id\": 987666,\n      \"id\": 7415284,\n      \"kind\": \"label\",\n      \"created_at\": \"2014-01-07T21:30:13Z\",\n      \"name\": \"integration\"\n    }\n  ],\n  \"story_type\": \"feature\"\n}"
+                },
+                "http_version":null
+            },
+            "recorded_at":"Mon, 20 Jan 2014 15:44:01 GMT"
+        }
+    ],
+    "recorded_with":"VCR 2.8.0"
+}
