@@ -70,21 +70,39 @@ module Pivotal
       Pivotal::Account.new(raw_account['id'], raw_account['name'])
     end
 
-    def comments(project_id, story_id)
-      raw_comments = get_response(comments_path(project_id, story_id))
+    def story_comments(project_id, story_id)
+      raw_comments = get_response(story_comments_path(project_id, story_id))
+
+      comments = raw_comments.map do |raw_comment|
+        Pivotal::Comment.new(raw_comment['id'], raw_comment['text'])
+      end
+    end
+
+    def story_comment(project_id, story_id, comment_id)
+      raw_comment = get_response(story_comment_path(project_id, story_id, comment_id))
+      Pivotal::Comment.new(raw_comment['id'], raw_comment['text'])
+    end
+
+    def new_story_comment(project_id, story_id, text)
+      raw_comment = post_response(story_comments_path(project_id, story_id), text: text)
+      Pivotal::Comment.new(raw_comment['id'], raw_comment['text'])
+    end
+
+    def epic_comments(project_id, epic_id)
+      raw_comments = get_response(epic_comments_path(project_id, epic_id))
 
       raw_comments.map do |raw_comment|
         Pivotal::Comment.new(raw_comment['id'], raw_comment['text'])
       end
     end
 
-    def comment(project_id, story_id, comment_id)
-      raw_comment = get_response(comment_path(project_id, story_id, comment_id))
+    def epic_comment(project_id, epic_id, comment_id)
+      raw_comment = get_response(epic_comment_path(project_id, epic_id, comment_id))
       Pivotal::Comment.new(raw_comment['id'], raw_comment['text'])
     end
 
-    def new_comment(project_id, story_id, text)
-      raw_comment = post_response(comments_path(project_id, story_id), text: text)
+    def new_epic_comment(project_id, epic_id, text)
+      raw_comment = post_response(epic_comments_path(project_id, epic_id), text: text)
       Pivotal::Comment.new(raw_comment['id'], raw_comment['text'])
     end
 

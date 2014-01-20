@@ -36,12 +36,20 @@ module Pivotal
       "#{epics_path(project_id)}/#{id}"
     end
 
-    def comments_path(project_id, story_id)
+    def story_comments_path(project_id, story_id)
       BASE_URL % "projects/#{project_id}/stories/#{story_id}/comments"
     end
 
-    def comment_path(project_id, story_id, comment_id)
-      "#{comments_path(project_id, story_id)}/#{comment_id}"
+    def story_comment_path(project_id, story_id, comment_id)
+      "%s/#{comment_id}" % story_comments_path(project_id, story_id)
+    end
+
+    def epic_comments_path(project_id, epic_id)
+      BASE_URL % "projects/#{project_id}/epics/#{epic_id}/comments"
+    end
+
+    def epic_comment_path(project_id, epic_id, comment_id)
+      "%s/#{comment_id}" % epic_comments_path(project_id, epic_id)
     end
   end
 end

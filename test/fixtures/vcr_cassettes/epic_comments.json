@@ -3,7 +3,7 @@
         {
             "request":{
                 "method":"get",
-                "uri":"https://www.pivotaltracker.com/services/v5/projects/987666/stories/63414462/comments",
+                "uri":"https://www.pivotaltracker.com/services/v5/projects/987666/epics/1017976/comments",
                 "body":{
                     "encoding":"US-ASCII",
                     "string":""
@@ -11,6 +11,9 @@
                 "headers":{
                     "X-Trackertoken":[
                         "7d2d06f6381f9be18833d44c9361828c"
+                    ],
+                    "Content-Type":[
+                        "application/json"
                     ]
                 }
             },
@@ -24,7 +27,7 @@
                         "application/json; charset=utf-8"
                     ],
                     "Content-Length":[
-                        "217"
+                        "222"
                     ],
                     "Status":[
                         "200"
@@ -33,16 +36,16 @@
                         "Phusion Passenger (mod_rails/mod_rack) 3.0.14"
                     ],
                     "X-Tracker-Project-Version":[
-                        "4"
+                        "16"
                     ],
                     "Cache-Control":[
                         "private, max-age=0, must-revalidate"
                     ],
                     "X-Runtime":[
-                        "28"
+                        "47"
                     ],
                     "Etag":[
-                        "\"00ad5685defbdf82485a4e247d115bb4\""
+                        "\"18446ea3f03b226457df3d61cb022bd9\""
                     ],
                     "Server":[
                         "nginx/1.2.2 + Phusion Passenger 3.0.14 (mod_rails/mod_rack)"
@@ -62,11 +65,11 @@
                 },
                 "body":{
                     "encoding":"UTF-8",
-                    "string":"[\n  {\n    \"text\": \"Hello World!\",\n    \"updated_at\": \"2014-01-20T16:37:42Z\",\n    \"id\": 59955332,\n    \"kind\": \"comment\",\n    \"person_id\": 1033785,\n    \"created_at\": \"2014-01-20T16:37:42Z\",\n    \"story_id\": 63414462\n  }\n]"
+                    "string":"[\n  {\n    \"text\": \"My New Epic Comment\",\n    \"updated_at\": \"2014-01-20T18:58:26Z\",\n    \"id\": 59968756,\n    \"kind\": \"comment\",\n    \"person_id\": 1033785,\n    \"epic_id\": 1017976,\n    \"created_at\": \"2014-01-20T18:58:26Z\"\n  }\n]"
                 },
                 "http_version":null
             },
-            "recorded_at":"Mon, 20 Jan 2014 16:47:09 GMT"
+            "recorded_at":"Mon, 20 Jan 2014 18:59:09 GMT"
         }
     ],
     "recorded_with":"VCR 2.8.0"
