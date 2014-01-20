@@ -1,0 +1,73 @@
+{
+    "http_interactions":[
+        {
+            "request":{
+                "method":"get",
+                "uri":"https://www.pivotaltracker.com/services/v5/projects/987666/stories/63414462/comments/59955332",
+                "body":{
+                    "encoding":"US-ASCII",
+                    "string":""
+                },
+                "headers":{
+                    "X-Trackertoken":[
+                        "7d2d06f6381f9be18833d44c9361828c"
+                    ]
+                }
+            },
+            "response":{
+                "status":{
+                    "code":200,
+                    "message":"OK"
+                },
+                "headers":{
+                    "Content-Type":[
+                        "application/json; charset=utf-8"
+                    ],
+                    "Content-Length":[
+                        "195"
+                    ],
+                    "Status":[
+                        "200"
+                    ],
+                    "X-Powered-By":[
+                        "Phusion Passenger (mod_rails/mod_rack) 3.0.14"
+                    ],
+                    "Cache-Control":[
+                        "private, max-age=0, must-revalidate"
+                    ],
+                    "Etag":[
+                        "\"a8a4b8da5496e9a0c6a88f887b8758f7\""
+                    ],
+                    "X-Tracker-Project-Version":[
+                        "4"
+                    ],
+                    "X-Runtime":[
+                        "37"
+                    ],
+                    "Server":[
+                        "nginx/1.2.2 + Phusion Passenger 3.0.14 (mod_rails/mod_rack)"
+                    ],
+                    "Access-Control-Allow-Origin":[
+                        "*"
+                    ],
+                    "Access-Control-Allow-Credentials":[
+                        "false"
+                    ],
+                    "Access-Control-Allow-Methods":[
+                        "GET, POST, PUT, DELETE, OPTIONS"
+                    ],
+                    "Access-Control-Allow-Headers":[
+                        "X-TrackerToken,DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,X-Tracker-Warn-Unless-Project-Version-Is"
+                    ]
+                },
+                "body":{
+                    "encoding":"UTF-8",
+                    "string":"{\n  \"text\": \"Hello World!\",\n  \"created_at\": \"2014-01-20T16:37:42Z\",\n  \"updated_at\": \"2014-01-20T16:37:42Z\",\n  \"person_id\": 1033785,\n  \"story_id\": 63414462,\n  \"id\": 59955332,\n  \"kind\": \"comment\"\n}"
+                },
+                "http_version":null
+            },
+            "recorded_at":"Mon, 20 Jan 2014 16:49:39 GMT"
+        }
+    ],
+    "recorded_with":"VCR 2.8.0"
+}

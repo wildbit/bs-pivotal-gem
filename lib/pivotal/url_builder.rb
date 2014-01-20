@@ -27,5 +27,13 @@ module Pivotal
     def story_path(id)
       BASE_URL % "stories/#{id}"
     end
+
+    def comments_path(project_id, story_id)
+      BASE_URL % "projects/#{project_id}/stories/#{story_id}/comments"
+    end
+
+    def comment_path(project_id, story_id, comment_id)
+      "#{comments_path(project_id, story_id)}/#{comment_id}"
+    end
   end
 end

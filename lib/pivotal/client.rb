@@ -2,6 +2,7 @@ require 'pivotal/url_builder'
 require 'pivotal/account'
 require 'pivotal/project'
 require 'pivotal/story'
+require 'pivotal/comment'
 require 'httparty'
 require 'json'
 
@@ -55,6 +56,24 @@ module Pivotal
       Pivotal::Account.new(raw_account['id'], raw_account['name'])
     end
 
+    def comments(project_id, story_id)
+      raw_comments = get_response(comments_path(project_id, story_id))
+
+      raw_comments.map do |raw_comment|
+        Pivotal::Comment.new(raw_comment['id'], raw_comment['text'])
+      end
+    end
+
+    def comment(project_id, story_id, comment_id)
+      raw_comment = get_response(comment_path(project_id, story_id, comment_id))
+      Pivotal::Comment.new(raw_comment['id'], raw_comment['text'])
+    end
+
+    def new_comment(project_id, story_id, text)
+      raw_comment = post_response(comments_path(project_id, story_id), text: text)
+      Pivotal::Comment.new(raw_comment['id'], raw_comment['text'])
+    end
+
     private
 
     def get_response(path)
@@ -62,8 +81,14 @@ module Pivotal
       JSON.parse(raw_response.body)
     end
 
+    def post_response(path, post_body)
+      json_body = JSON(post_body)
+      raw_response = self.class.post(path, http_options.merge(body: json_body))
+      JSON.parse(raw_response.body)
+    end
+
     def http_options
-      { headers: { 'X-TrackerToken' => token } }
+      { headers: { 'X-TrackerToken' => token, 'Content-Type' => 'application/json' } }
     end
   end
 end
