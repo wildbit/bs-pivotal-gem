@@ -42,7 +42,7 @@ module Pivotal
 
     def story(id)
       raw_story = get_response(story_path(id))
-      Pivotal::Project.new(raw_story['id'], raw_story['name'])
+      Pivotal::Story.new(raw_story['id'], raw_story['name'], raw_project['account_id'])
     end
 
     def epics(project_id)
