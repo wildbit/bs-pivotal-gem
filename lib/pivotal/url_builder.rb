@@ -63,5 +63,13 @@ module Pivotal
     def project_story_labels_path(project_id, story_id)
       "%s/#{story_id}/labels" % stories_path(project_id)
     end
+
+    def users_path(account_id)
+      BASE_URL % "accounts/#{account_id}/memberships"
+    end
+
+    def user_path(account_id, user_id)
+      BASE_URL % "accounts/#{account_id}/memberships/#{user_id}"
+    end
   end
 end

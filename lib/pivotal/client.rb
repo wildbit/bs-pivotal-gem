@@ -5,6 +5,7 @@ require 'pivotal/story'
 require 'pivotal/comment'
 require 'pivotal/epic'
 require 'pivotal/label'
+require 'pivotal/user'
 require 'httparty'
 require 'json'
 
@@ -127,6 +128,19 @@ module Pivotal
       else
         raise Pivotal::UnknownStateError.new("#{state} is not a valid story state")
       end
+    end
+
+    def users(account_id)
+      raw_users = get_response(users_path(account_id))
+
+      raw_users.map do |raw_user|
+        Pivotal::User.new(raw_user['id'], raw_user['person']['name'], raw_user['person']['username'], raw_user['person']['initials'])
+      end
+    end
+
+    def user(account_id, user_id)
+      raw_user = get_response(user_path(account_id, user_id))
+      Pivotal::User.new(raw_user['id'], raw_user['person']['name'], raw_user['person']['username'], raw_user['person']['initials'])
     end
 
     private

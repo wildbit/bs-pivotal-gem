@@ -21,5 +21,6 @@ class PivotalTestCase < Test::Unit::TestCase
     @story_comment_id = 59955332
     @epic_comment_id = 59968756
     @epic_id = 1017976
+    @user_id = 1033785
   end
 end
