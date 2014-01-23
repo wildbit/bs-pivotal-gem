@@ -21,8 +21,9 @@ class ClientTest < PivotalTestCase
   def test_projects
     VCR.use_cassette('projects') do
       @client.projects.each do |project|
-        assert_not_nil project.id
-        assert_not_nil project.name
+        assert_not_nil project.id, "Project's ID was nil"
+        assert_not_nil project.name, "Project's namewas nil"
+        assert_not_nil project.account_id, "Project's account ID was nil"
       end
     end
   end
@@ -30,8 +31,9 @@ class ClientTest < PivotalTestCase
   def test_single_project
     VCR.use_cassette('project') do
       project = @client.project(@project_id)
-      assert_not_nil project.id
-      assert_not_nil project.name
+      assert_not_nil project.id, "Project's ID was nil"
+      assert_not_nil project.name, "Project's namewas nil"
+      assert_not_nil project.account_id, "Project's account ID was nil"
     end
   end
 

@@ -23,13 +23,13 @@ module Pivotal
       raw_projects = get_response(projects_path)
 
       raw_projects.map do |raw_project|
-        Pivotal::Project.new(raw_project['id'], raw_project['name'])
+        Pivotal::Project.new(raw_project['id'], raw_project['name'], raw_project['account_id'])
       end
     end
 
     def project(id)
       raw_project = get_response(project_path(id))
-      Pivotal::Project.new(raw_project['id'], raw_project['name'])
+      Pivotal::Project.new(raw_project['id'], raw_project['name'], raw_project['account_id'])
     end
 
     def stories(project_id)
