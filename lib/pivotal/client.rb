@@ -37,13 +37,13 @@ module Pivotal
       raw_stories = get_response(stories_path(project_id))
 
       raw_stories.map do |raw_story|
-        Pivotal::Story.new(raw_story['id'], raw_story['name'])
+        Pivotal::Story.new(raw_story['id'], raw_story['name'], raw_story['current_state'], raw_story['estimate'], raw_story['owned_by_id'])
       end
     end
 
     def story(id)
       raw_story = get_response(story_path(id))
-      Pivotal::Story.new(raw_story['id'], raw_story['name'])
+      Pivotal::Story.new(raw_story['id'], raw_story['name'], raw_story['current_state'], raw_story['estimate'], raw_story['owned_by_id'])
     end
 
     def epics(project_id)
@@ -124,7 +124,7 @@ module Pivotal
     def change_story_state(project_id, story_id, state)
       if Pivotal::Story::STATES.include?(state)
         raw_story = put_response(project_story_path(project_id, story_id), current_state: state.to_s.downcase)
-        Pivotal::Story.new(raw_story['id'], raw_story['name'])
+        Pivotal::Story.new(raw_story['id'], raw_story['name'], raw_story['current_state'], raw_story['estimate'], raw_story['owned_by_id'])
       else
         raise Pivotal::UnknownStateError.new("#{state} is not a valid story state")
       end
@@ -141,6 +141,11 @@ module Pivotal
     def user(account_id, user_id)
       raw_user = get_response(user_path(account_id, user_id))
       Pivotal::User.new(raw_user['id'], raw_user['person']['name'], raw_user['person']['username'], raw_user['person']['initials'])
+    end
+
+    def update_story_owner(story_id, user_id)
+      raw_story = put_response(story_path(story_id), owned_by_id: user_id.to_i)
+      Pivotal::Story.new(raw_story['id'], raw_story['name'], raw_story['current_state'], raw_story['estimate'], raw_story['owned_by_id'])
     end
 
     private

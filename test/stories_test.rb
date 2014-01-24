@@ -30,4 +30,13 @@ class StoriesTest < PivotalTestCase
       @client.change_story_state(@project_id, @story_id, 'xzy')
     end
   end
+
+  def test_change_owned_by_id
+    VCR.use_cassette('change_story_owner') do
+      story = @client.update_story_owner(@story_id, @user_id)
+      assert_not_nil story.id, "Story ID is nil"
+      assert_not_nil story.name, "Story name is nil"
+      assert_equal @user_id, story.owned_by_id, "Story owner doesn't match given user id"
+    end
+  end
 end
