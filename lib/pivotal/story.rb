@@ -1,7 +1,9 @@
 require 'pivotal/model'
 
 module Pivotal
-  class UnknownStateError < StandardError; end
+  class PivotalError < StandardError; end
+  class UnknownStateError < PivotalError; end
+  class StoryNotEstimatedError < PivotalError; end
 
   class Story < Model
     STATES = %w(accepted delivered finished started rejected unstarted unscheduled)

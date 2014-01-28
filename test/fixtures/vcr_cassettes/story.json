@@ -11,6 +11,9 @@
                 "headers":{
                     "X-Trackertoken":[
                         "7d2d06f6381f9be18833d44c9361828c"
+                    ],
+                    "Content-Type":[
+                        "application/json"
                     ]
                 }
             },
@@ -24,7 +27,7 @@
                         "application/json; charset=utf-8"
                     ],
                     "Content-Length":[
-                        "667"
+                        "1908"
                     ],
                     "Status":[
                         "200"
@@ -32,17 +35,17 @@
                     "X-Powered-By":[
                         "Phusion Passenger (mod_rails/mod_rack) 3.0.14"
                     ],
-                    "X-Tracker-Project-Version":[
-                        "3"
-                    ],
                     "Cache-Control":[
                         "private, max-age=0, must-revalidate"
                     ],
-                    "X-Runtime":[
-                        "51"
-                    ],
                     "Etag":[
-                        "\"e848fb39edcbc8b4528bf5d22d67ffb9\""
+                        "\"a919a3dc242ca3ba14d7ba19c396b818\""
+                    ],
+                    "X-Tracker-Project-Version":[
+                        "48"
+                    ],
+                    "X-Runtime":[
+                        "52"
                     ],
                     "Server":[
                         "nginx/1.2.2 + Phusion Passenger 3.0.14 (mod_rails/mod_rack)"
@@ -62,11 +65,11 @@
                 },
                 "body":{
                     "encoding":"UTF-8",
-                    "string":"{\n  \"current_state\": \"unscheduled\",\n  \"owner_ids\": [\n\n  ],\n  \"description\": \"I would love to see my commits associated with my user stories\",\n  \"updated_at\": \"2014-01-07T21:30:13Z\",\n  \"project_id\": 987666,\n  \"id\": 63414462,\n  \"kind\": \"story\",\n  \"requested_by_id\": 1033785,\n  \"created_at\": \"2014-01-07T21:30:13Z\",\n  \"url\": \"http://www.pivotaltracker.com/story/show/63414462\",\n  \"name\": \"Integration with Pivotal Tracker\",\n  \"labels\": [\n    {\n      \"updated_at\": \"2014-01-07T21:30:13Z\",\n      \"project_id\": 987666,\n      \"id\": 7415284,\n      \"kind\": \"label\",\n      \"created_at\": \"2014-01-07T21:30:13Z\",\n      \"name\": \"integration\"\n    }\n  ],\n  \"story_type\": \"feature\"\n}"
+                    "string":"{\n  \"created_at\": \"2014-01-07T21:30:13Z\",\n  \"labels\": [\n    {\n      \"created_at\": \"2014-01-23T20:59:48Z\",\n      \"updated_at\": \"2014-01-23T20:59:48Z\",\n      \"project_id\": 987666,\n      \"id\": 7545694,\n      \"name\": \"#!@#\",\n      \"kind\": \"label\"\n    },\n    {\n      \"created_at\": \"2014-01-23T21:00:09Z\",\n      \"updated_at\": \"2014-01-23T21:00:09Z\",\n      \"project_id\": 987666,\n      \"id\": 7545702,\n      \"name\": \"$%^1!\",\n      \"kind\": \"label\"\n    },\n    {\n      \"created_at\": \"2014-01-23T20:59:44Z\",\n      \"updated_at\": \"2014-01-23T20:59:44Z\",\n      \"project_id\": 987666,\n      \"id\": 7545692,\n      \"name\": \"hello\",\n      \"kind\": \"label\"\n    },\n    {\n      \"created_at\": \"2014-01-20T20:49:24Z\",\n      \"updated_at\": \"2014-01-20T20:49:24Z\",\n      \"project_id\": 987666,\n      \"id\": 7515704,\n      \"name\": \"hello world\",\n      \"kind\": \"label\"\n    },\n    {\n      \"created_at\": \"2014-01-07T21:30:13Z\",\n      \"updated_at\": \"2014-01-07T21:30:13Z\",\n      \"project_id\": 987666,\n      \"id\": 7415284,\n      \"name\": \"integration\",\n      \"kind\": \"label\"\n    },\n    {\n      \"created_at\": \"2014-01-20T20:27:23Z\",\n      \"updated_at\": \"2014-01-20T20:27:23Z\",\n      \"project_id\": 987666,\n      \"id\": 7515546,\n      \"name\": \"lol labels\",\n      \"kind\": \"label\"\n    },\n    {\n      \"created_at\": \"2014-01-20T20:23:00Z\",\n      \"updated_at\": \"2014-01-20T20:23:00Z\",\n      \"project_id\": 987666,\n      \"id\": 7515512,\n      \"name\": \"my awesome label\",\n      \"kind\": \"label\"\n    }\n  ],\n  \"owned_by_id\": 1033785,\n  \"updated_at\": \"2014-01-24T15:26:36Z\",\n  \"url\": \"http://www.pivotaltracker.com/story/show/63414462\",\n  \"project_id\": 987666,\n  \"description\": \"I would love to see my commits associated with my user stories\",\n  \"story_type\": \"feature\",\n  \"owner_ids\": [\n    1033785\n  ],\n  \"id\": 63414462,\n  \"current_state\": \"started\",\n  \"estimate\": 1,\n  \"name\": \"Integration with Pivotal Tracker\",\n  \"requested_by_id\": 1033785,\n  \"kind\": \"story\"\n}"
                 },
                 "http_version":null
             },
-            "recorded_at":"Mon, 20 Jan 2014 15:44:01 GMT"
+            "recorded_at":"Tue, 28 Jan 2014 18:15:23 GMT"
         }
     ],
     "recorded_with":"VCR 2.8.0"

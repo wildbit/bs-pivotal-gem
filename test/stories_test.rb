@@ -17,17 +17,29 @@ class StoriesTest < PivotalTestCase
     end
   end
 
+  def test_unknown_story
+    VCR.use_cassette('unknown_story') do
+      assert_raise Pivotal::PivotalError do
+        @client.story(0)
+      end
+    end
+  end
+
   def test_change_to_valid_state
     VCR.use_cassette('change_story_state') do
-      story = @client.change_story_state(@project_id, @story_id, 'started')
-      assert_not_nil story.id, "Story ID is nil"
-      assert_not_nil story.name, "Story name is nil"
+      VCR.use_cassette('story') do
+        story = @client.change_story_state(@project_id, @story_id, 'started')
+        assert_not_nil story.id, "Story ID is nil"
+        assert_not_nil story.name, "Story name is nil"
+      end
     end
   end
 
   def test_change_to_invalid_state
-    assert_raise Pivotal::UnknownStateError do
-      @client.change_story_state(@project_id, @story_id, 'xzy')
+    VCR.use_cassette('story') do
+      assert_raise Pivotal::UnknownStateError do
+        @client.change_story_state(@project_id, @story_id, 'xzy')
+      end
     end
   end
 
@@ -37,6 +49,14 @@ class StoriesTest < PivotalTestCase
       assert_not_nil story.id, "Story ID is nil"
       assert_not_nil story.name, "Story name is nil"
       assert_equal @user_id, story.owned_by_id, "Story owner doesn't match given user id"
+    end
+  end
+
+  def test_change_state_when_not_estimated
+    VCR.use_cassette('unestimated_story') do
+      assert_raise Pivotal::StoryNotEstimatedError do
+        @client.change_story_state(@project_id, @unestimated_story_id, 'started')
+      end
     end
   end
 end

@@ -1,0 +1,76 @@
+{
+    "http_interactions":[
+        {
+            "request":{
+                "method":"get",
+                "uri":"https://www.pivotaltracker.com/services/v5/stories/64181792",
+                "body":{
+                    "encoding":"US-ASCII",
+                    "string":""
+                },
+                "headers":{
+                    "X-Trackertoken":[
+                        "7d2d06f6381f9be18833d44c9361828c"
+                    ],
+                    "Content-Type":[
+                        "application/json"
+                    ]
+                }
+            },
+            "response":{
+                "status":{
+                    "code":200,
+                    "message":"OK"
+                },
+                "headers":{
+                    "Content-Type":[
+                        "application/json; charset=utf-8"
+                    ],
+                    "Content-Length":[
+                        "595"
+                    ],
+                    "Status":[
+                        "200"
+                    ],
+                    "X-Powered-By":[
+                        "Phusion Passenger (mod_rails/mod_rack) 3.0.14"
+                    ],
+                    "X-Tracker-Project-Version":[
+                        "48"
+                    ],
+                    "Etag":[
+                        "\"2e136463c0fd68fc29183b2981c0a42a\""
+                    ],
+                    "X-Runtime":[
+                        "457"
+                    ],
+                    "Cache-Control":[
+                        "private, max-age=0, must-revalidate"
+                    ],
+                    "Server":[
+                        "nginx/1.2.2 + Phusion Passenger 3.0.14 (mod_rails/mod_rack)"
+                    ],
+                    "Access-Control-Allow-Origin":[
+                        "*"
+                    ],
+                    "Access-Control-Allow-Credentials":[
+                        "false"
+                    ],
+                    "Access-Control-Allow-Methods":[
+                        "GET, POST, PUT, DELETE, OPTIONS"
+                    ],
+                    "Access-Control-Allow-Headers":[
+                        "X-TrackerToken,DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,X-Tracker-Warn-Unless-Project-Version-Is"
+                    ]
+                },
+                "body":{
+                    "encoding":"UTF-8",
+                    "string":"{\n  \"name\": \"This Old Man\",\n  \"owned_by_id\": 1033785,\n  \"created_at\": \"2014-01-20T20:52:59Z\",\n  \"requested_by_id\": 1033785,\n  \"id\": 64181792,\n  \"updated_at\": \"2014-01-24T16:31:55Z\",\n  \"kind\": \"story\",\n  \"current_state\": \"unscheduled\",\n  \"url\": \"http://www.pivotaltracker.com/story/show/64181792\",\n  \"project_id\": 987666,\n  \"labels\": [\n    {\n      \"name\": \"hello\",\n      \"created_at\": \"2014-01-23T20:59:44Z\",\n      \"id\": 7545692,\n      \"updated_at\": \"2014-01-23T20:59:44Z\",\n      \"kind\": \"label\",\n      \"project_id\": 987666\n    }\n  ],\n  \"story_type\": \"feature\",\n  \"owner_ids\": [\n    1033785\n  ]\n}"
+                },
+                "http_version":null
+            },
+            "recorded_at":"Tue, 28 Jan 2014 18:14:22 GMT"
+        }
+    ],
+    "recorded_with":"VCR 2.8.0"
+}

@@ -1,0 +1,55 @@
+{
+    "http_interactions":[
+        {
+            "request":{
+                "method":"get",
+                "uri":"https://www.pivotaltracker.com/services/v5/stories/0",
+                "body":{
+                    "encoding":"US-ASCII",
+                    "string":""
+                },
+                "headers":{
+                    "X-Trackertoken":[
+                        "7d2d06f6381f9be18833d44c9361828c"
+                    ],
+                    "Content-Type":[
+                        "application/json"
+                    ]
+                }
+            },
+            "response":{
+                "status":{
+                    "code":404,
+                    "message":"Not Found"
+                },
+                "headers":{
+                    "Content-Type":[
+                        "application/json; charset=utf-8"
+                    ],
+                    "Content-Length":[
+                        "283"
+                    ],
+                    "Status":[
+                        "404"
+                    ],
+                    "X-Powered-By":[
+                        "Phusion Passenger (mod_rails/mod_rack) 3.0.14"
+                    ],
+                    "Cache-Control":[
+                        "no-cache"
+                    ],
+                    "Server":[
+                        "nginx/1.2.2 + Phusion Passenger 3.0.14 (mod_rails/mod_rack)"
+                    ]
+                },
+                "body":{
+                    "encoding":"UTF-8",
+                    "string":"{\n  \"kind\": \"error\",\n  \"code\": \"unfound_resource\",\n  \"error\": \"The object you tried to access could not be found.  It may have been removed by another user, you may be using the ID of another object type, or you may be trying to access a sub-resource at the wrong point in a tree.\"\n}"
+                },
+                "http_version":null
+            },
+            "recorded_at":"Tue, 28 Jan 2014 18:19:27 GMT"
+        }
+    ],
+    "recorded_with":"VCR 2.8.0"
+}

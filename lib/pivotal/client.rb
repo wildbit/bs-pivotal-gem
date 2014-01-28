@@ -43,6 +43,11 @@ module Pivotal
 
     def story(id)
       raw_story = get_response(story_path(id))
+
+      if raw_story['id'].nil?
+        raise Pivotal::PivotalError.new("Story ##{id} was not found")
+      end
+
       Pivotal::Story.new(raw_story['id'], raw_story['name'], raw_story['current_state'], raw_story['estimate'], raw_story['owned_by_id'])
     end
 
@@ -122,7 +127,10 @@ module Pivotal
     end
 
     def change_story_state(project_id, story_id, state)
-      if Pivotal::Story::STATES.include?(state)
+      current_story = story(story_id)
+      if current_story.estimate.nil?
+        raise Pivotal::StoryNotEstimatedError.new("Story ##{story_id} must be estimated first")
+      elsif Pivotal::Story::STATES.include?(state)
         raw_story = put_response(project_story_path(project_id, story_id), current_state: state.to_s.downcase)
         Pivotal::Story.new(raw_story['id'], raw_story['name'], raw_story['current_state'], raw_story['estimate'], raw_story['owned_by_id'])
       else
