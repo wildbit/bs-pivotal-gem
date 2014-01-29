@@ -26,7 +26,9 @@ class UsersTest < PivotalTestCase
   def test_matches
     user = Pivotal::User.new(1, "Chris Ledet", "chrisledet", "CL")
     assert user.matches?("Chris Ledet")
+    assert user.matches?("chris ledet")
     assert user.matches?("CL")
+    assert user.matches?("cl")
     assert user.matches?("chrisledet")
     refute user.matches?("XYZ")
     refute user.matches?("Ledet Chris")

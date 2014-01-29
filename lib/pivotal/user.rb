@@ -9,8 +9,10 @@ module Pivotal
     end
 
     def matches?(needle)
+      return false if needle.nil?
+
       [name, username, initials].compact.any? do |identity|
-        identity.include?(needle.to_s)
+        identity.downcase.include?(needle.downcase)
       end
     end
   end
