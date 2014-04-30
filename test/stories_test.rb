@@ -52,11 +52,31 @@ class StoriesTest < PivotalTestCase
     end
   end
 
-  def test_change_state_when_not_estimated
+  def test_change_state_when_not_estimated_for_feature_story
     VCR.use_cassette('unestimated_story') do
       assert_raise Pivotal::StoryNotEstimatedError do
         @client.change_story_state(@project_id, @unestimated_story_id, 'started')
       end
+    end
+  end
+
+  def test_change_state_when_not_estimated_for_chore_story
+    VCR.use_cassette('unestimated_chore') do
+      assert_equal nil, @client.story(@chore_story_id).estimate
+      chore = @client.change_story_state(@project_id, @chore_story_id, 'started')
+      assert_equal 'started', chore.state
+    end
+  end
+
+  def test_story_is_feature?
+    VCR.use_cassette('story') do
+      assert @client.story(@story_id).feature?
+    end
+  end
+
+  def test_story_is_chore?
+    VCR.use_cassette('chore') do
+      assert @client.story(@chore_story_id).chore?
     end
   end
 end

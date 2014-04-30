@@ -1,0 +1,76 @@
+{
+  "http_interactions": [
+    {
+      "request": {
+        "method": "get",
+        "uri": "https:\/\/www.pivotaltracker.com\/services\/v5\/stories\/70441578",
+        "body": {
+          "encoding": "US-ASCII",
+          "string": ""
+        },
+        "headers": {
+          "X-Trackertoken": [
+            "7d2d06f6381f9be18833d44c9361828c"
+          ],
+          "Content-Type": [
+            "application\/json"
+          ]
+        }
+      },
+      "response": {
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "headers": {
+          "Content-Type": [
+            "application\/json; charset=utf-8"
+          ],
+          "Content-Length": [
+            "358"
+          ],
+          "Status": [
+            "200"
+          ],
+          "X-Powered-By": [
+            "Phusion Passenger (mod_rails\/mod_rack) 3.0.14"
+          ],
+          "Etag": [
+            "\"93d452c66711b3b4b9fade19ff06b2f5\""
+          ],
+          "X-Runtime": [
+            "46"
+          ],
+          "X-Tracker-Project-Version": [
+            "51"
+          ],
+          "Cache-Control": [
+            "private, max-age=0, must-revalidate"
+          ],
+          "Server": [
+            "nginx\/1.2.2 + Phusion Passenger 3.0.14 (mod_rails\/mod_rack)"
+          ],
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Access-Control-Allow-Credentials": [
+            "false"
+          ],
+          "Access-Control-Allow-Methods": [
+            "GET, POST, PUT, DELETE, OPTIONS"
+          ],
+          "Access-Control-Allow-Headers": [
+            "X-TrackerToken,DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,X-Tracker-Warn-Unless-Project-Version-Is"
+          ]
+        },
+        "body": {
+          "encoding": "UTF-8",
+          "string": "{\n  \"story_type\": \"chore\",\n  \"kind\": \"story\",\n  \"owner_ids\": [\n\n  ],\n  \"labels\": [\n\n  ],\n  \"current_state\": \"started\",\n  \"created_at\": \"2014-04-30T14:32:51Z\",\n  \"id\": 70441578,\n  \"name\": \"Chore story\",\n  \"requested_by_id\": 1033785,\n  \"project_id\": 987666,\n  \"updated_at\": \"2014-04-30T14:55:48Z\",\n  \"url\": \"http:\/\/www.pivotaltracker.com\/story\/show\/70441578\"\n}"
+        },
+        "http_version": null
+      },
+      "recorded_at": "Wed, 30 Apr 2014 15:03:32 GMT"
+    }
+  ],
+  "recorded_with": "VCR 2.8.0"
+}

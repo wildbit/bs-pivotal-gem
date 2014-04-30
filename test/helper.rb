@@ -19,6 +19,7 @@ class PivotalTestCase < Test::Unit::TestCase
     @project_id = 987666
     @story_id = 63414462
     @unestimated_story_id = 64181792
+    @chore_story_id = 70441578
     @story_comment_id = 59955332
     @epic_comment_id = 59968756
     @epic_id = 1017976

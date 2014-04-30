@@ -1,0 +1,218 @@
+{
+  "http_interactions": [
+    {
+      "request": {
+        "method": "get",
+        "uri": "https:\/\/www.pivotaltracker.com\/services\/v5\/stories\/70441578",
+        "body": {
+          "encoding": "US-ASCII",
+          "string": ""
+        },
+        "headers": {
+          "X-Trackertoken": [
+            "7d2d06f6381f9be18833d44c9361828c"
+          ],
+          "Content-Type": [
+            "application\/json"
+          ]
+        }
+      },
+      "response": {
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "headers": {
+          "Content-Type": [
+            "application\/json; charset=utf-8"
+          ],
+          "Content-Length": [
+            "362"
+          ],
+          "Status": [
+            "200"
+          ],
+          "X-Powered-By": [
+            "Phusion Passenger (mod_rails\/mod_rack) 3.0.14"
+          ],
+          "X-Tracker-Project-Version": [
+            "50"
+          ],
+          "X-Runtime": [
+            "49"
+          ],
+          "Etag": [
+            "\"f786d2bf1e4b55ee016242ef45d9d516\""
+          ],
+          "Cache-Control": [
+            "private, max-age=0, must-revalidate"
+          ],
+          "Server": [
+            "nginx\/1.2.2 + Phusion Passenger 3.0.14 (mod_rails\/mod_rack)"
+          ],
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Access-Control-Allow-Credentials": [
+            "false"
+          ],
+          "Access-Control-Allow-Methods": [
+            "GET, POST, PUT, DELETE, OPTIONS"
+          ],
+          "Access-Control-Allow-Headers": [
+            "X-TrackerToken,DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,X-Tracker-Warn-Unless-Project-Version-Is"
+          ]
+        },
+        "body": {
+          "encoding": "UTF-8",
+          "string": "{\n  \"project_id\": 987666,\n  \"requested_by_id\": 1033785,\n  \"created_at\": \"2014-04-30T14:32:51Z\",\n  \"url\": \"http:\/\/www.pivotaltracker.com\/story\/show\/70441578\",\n  \"owner_ids\": [\n\n  ],\n  \"current_state\": \"unscheduled\",\n  \"updated_at\": \"2014-04-30T14:32:51Z\",\n  \"name\": \"Chore story\",\n  \"labels\": [\n\n  ],\n  \"kind\": \"story\",\n  \"id\": 70441578,\n  \"story_type\": \"chore\"\n}"
+        },
+        "http_version": null
+      },
+      "recorded_at": "Wed, 30 Apr 2014 14:55:48 GMT"
+    },
+    {
+      "request": {
+        "method": "get",
+        "uri": "https:\/\/www.pivotaltracker.com\/services\/v5\/stories\/70441578",
+        "body": {
+          "encoding": "US-ASCII",
+          "string": ""
+        },
+        "headers": {
+          "X-Trackertoken": [
+            "7d2d06f6381f9be18833d44c9361828c"
+          ],
+          "Content-Type": [
+            "application\/json"
+          ]
+        }
+      },
+      "response": {
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "headers": {
+          "Content-Type": [
+            "application\/json; charset=utf-8"
+          ],
+          "Content-Length": [
+            "362"
+          ],
+          "Status": [
+            "200"
+          ],
+          "X-Powered-By": [
+            "Phusion Passenger (mod_rails\/mod_rack) 3.0.14"
+          ],
+          "Cache-Control": [
+            "private, max-age=0, must-revalidate"
+          ],
+          "X-Tracker-Project-Version": [
+            "50"
+          ],
+          "Etag": [
+            "\"f786d2bf1e4b55ee016242ef45d9d516\""
+          ],
+          "X-Runtime": [
+            "29"
+          ],
+          "Server": [
+            "nginx\/1.2.2 + Phusion Passenger 3.0.14 (mod_rails\/mod_rack)"
+          ],
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Access-Control-Allow-Credentials": [
+            "false"
+          ],
+          "Access-Control-Allow-Methods": [
+            "GET, POST, PUT, DELETE, OPTIONS"
+          ],
+          "Access-Control-Allow-Headers": [
+            "X-TrackerToken,DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,X-Tracker-Warn-Unless-Project-Version-Is"
+          ]
+        },
+        "body": {
+          "encoding": "UTF-8",
+          "string": "{\n  \"project_id\": 987666,\n  \"requested_by_id\": 1033785,\n  \"created_at\": \"2014-04-30T14:32:51Z\",\n  \"url\": \"http:\/\/www.pivotaltracker.com\/story\/show\/70441578\",\n  \"owner_ids\": [\n\n  ],\n  \"current_state\": \"unscheduled\",\n  \"updated_at\": \"2014-04-30T14:32:51Z\",\n  \"name\": \"Chore story\",\n  \"labels\": [\n\n  ],\n  \"kind\": \"story\",\n  \"id\": 70441578,\n  \"story_type\": \"chore\"\n}"
+        },
+        "http_version": null
+      },
+      "recorded_at": "Wed, 30 Apr 2014 14:55:48 GMT"
+    },
+    {
+      "request": {
+        "method": "put",
+        "uri": "https:\/\/www.pivotaltracker.com\/services\/v5\/projects\/987666\/stories\/70441578",
+        "body": {
+          "encoding": "UTF-8",
+          "string": "{\"current_state\":\"started\"}"
+        },
+        "headers": {
+          "X-Trackertoken": [
+            "7d2d06f6381f9be18833d44c9361828c"
+          ],
+          "Content-Type": [
+            "application\/json"
+          ]
+        }
+      },
+      "response": {
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "headers": {
+          "Content-Type": [
+            "application\/json; charset=utf-8"
+          ],
+          "Content-Length": [
+            "358"
+          ],
+          "Status": [
+            "200"
+          ],
+          "X-Powered-By": [
+            "Phusion Passenger (mod_rails\/mod_rack) 3.0.14"
+          ],
+          "Etag": [
+            "\"f10a126273794e526806d13b8a6bca03\""
+          ],
+          "X-Runtime": [
+            "229"
+          ],
+          "X-Tracker-Project-Version": [
+            "51"
+          ],
+          "Cache-Control": [
+            "private, max-age=0, must-revalidate"
+          ],
+          "Server": [
+            "nginx\/1.2.2 + Phusion Passenger 3.0.14 (mod_rails\/mod_rack)"
+          ],
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Access-Control-Allow-Credentials": [
+            "false"
+          ],
+          "Access-Control-Allow-Methods": [
+            "GET, POST, PUT, DELETE, OPTIONS"
+          ],
+          "Access-Control-Allow-Headers": [
+            "X-TrackerToken,DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,X-Tracker-Warn-Unless-Project-Version-Is"
+          ]
+        },
+        "body": {
+          "encoding": "UTF-8",
+          "string": "{\n  \"story_type\": \"chore\",\n  \"updated_at\": \"2014-04-30T14:55:48Z\",\n  \"created_at\": \"2014-04-30T14:32:51Z\",\n  \"labels\": [\n\n  ],\n  \"project_id\": 987666,\n  \"current_state\": \"started\",\n  \"id\": 70441578,\n  \"name\": \"Chore story\",\n  \"requested_by_id\": 1033785,\n  \"owner_ids\": [\n\n  ],\n  \"url\": \"http:\/\/www.pivotaltracker.com\/story\/show\/70441578\",\n  \"kind\": \"story\"\n}"
+        },
+        "http_version": null
+      },
+      "recorded_at": "Wed, 30 Apr 2014 14:55:49 GMT"
+    }
+  ],
+  "recorded_with": "VCR 2.8.0"
+}

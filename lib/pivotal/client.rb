@@ -37,7 +37,7 @@ module Pivotal
       raw_stories = get_response(stories_path(project_id))
 
       raw_stories.map do |raw_story|
-        Pivotal::Story.new(raw_story['id'], raw_story['name'], raw_story['current_state'], raw_story['estimate'], raw_story['owned_by_id'])
+        Pivotal::Story.build(raw_story)
       end
     end
 
@@ -48,7 +48,7 @@ module Pivotal
         raise Pivotal::PivotalError.new("Story ##{id} was not found")
       end
 
-      Pivotal::Story.new(raw_story['id'], raw_story['name'], raw_story['current_state'], raw_story['estimate'], raw_story['owned_by_id'])
+      Pivotal::Story.build(raw_story)
     end
 
     def epics(project_id)
@@ -127,12 +127,13 @@ module Pivotal
     end
 
     def change_story_state(project_id, story_id, state)
-      current_story = story(story_id)
-      if current_story.estimate.nil?
+      story = story(story_id)
+
+      if story.feature? && story.estimate.nil?
         raise Pivotal::StoryNotEstimatedError.new("Story ##{story_id} must be estimated first")
       elsif Pivotal::Story::STATES.include?(state)
         raw_story = put_response(project_story_path(project_id, story_id), current_state: state.to_s.downcase)
-        Pivotal::Story.new(raw_story['id'], raw_story['name'], raw_story['current_state'], raw_story['estimate'], raw_story['owned_by_id'])
+        Pivotal::Story.build(raw_story)
       else
         raise Pivotal::UnknownStateError.new("#{state} is not a valid story state")
       end
@@ -153,7 +154,7 @@ module Pivotal
 
     def update_story_owner(story_id, user_id)
       raw_story = put_response(story_path(story_id), owned_by_id: user_id.to_i)
-      Pivotal::Story.new(raw_story['id'], raw_story['name'], raw_story['current_state'], raw_story['estimate'], raw_story['owned_by_id'])
+      Pivotal::Story.build(raw_story)
     end
 
     private
